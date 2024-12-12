@@ -78,7 +78,7 @@ v1 Features
 
 v1-beta Bugs:
 1)Wrong calculation in reschduling algo. (resolved)
-2)Auto reschduling algo time metrics must be updated
+2)Auto reschduling algo time metrics must be updated(resolved)
 3)Task are rescheduled when completed
 
  
