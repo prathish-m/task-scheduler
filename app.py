@@ -386,7 +386,7 @@ def getScheduledTasks():
             if(not isValidLeft or least_to_right - cp <= cp - least_to_left+1):
                 print(f"inserting at {least_to_right}")
                 actual_starting_time = date_epochs[least_to_right-1][1]
-                actual_ending_time = date_epochs[least_to_right-1][1]+duration_mins*60
+                actual_ending_time = date_epochs[least_to_right-1][1]+duration_secs
                 actual_starting_datetime = datetime.fromtimestamp(actual_starting_time).strftime('%Y-%m-%d %H:%M').split(' ')
                 ob['actual_starting_time']=actual_starting_datetime[1]
                 ob['actual_starting_date']=actual_starting_datetime[0]
@@ -395,8 +395,7 @@ def getScheduledTasks():
                 date_epochs.insert(least_to_right,[actual_starting_time,actual_ending_time])
             else:
                 print(f"inserting before {least_to_left}")
-                actual_starting_time = date_epochs[least_to_left][0]-duration_mins*60 
-                actual_ending_time = date_epochs[least_to_left][0]
+                actual_starting_time = date_epochs[least_to_left][0]-duration_secs
                 actual_starting_datetime = datetime.fromtimestamp(actual_starting_time).strftime('%Y-%m-%d %H:%M').split(' ')
                 actual_ending_datetime = datetime.fromtimestamp(actual_ending_time).strftime('%Y-%m-%d %H:%M').split(' ')
                 ob['actual_starting_time']=actual_starting_datetime[1]
