@@ -80,7 +80,7 @@ v1-beta Bugs:
 1)Wrong calculation in reschduling algo. (resolved)
 2)Auto reschduling algo time metrics must be updated(resolved)
 3)Task are rescheduled when completed
-
+4)Due is calculated before auto reschedule algo. 
  
 
 v2 Requirement

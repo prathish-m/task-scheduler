@@ -19,12 +19,14 @@
         {%endif%}
         {%for obj in data%}
         {%set hasPending = obj.tasks | has_pending%}
-        {%if (isPending and hasPending) or (not isPending and not hasPending) %}
+        {%if (isPending and hasPending) or not (isPending or hasPending) %}
+
         <div class="date-group">
         <p class="date">{{obj.date}}</p>
             {%for task in obj.tasks%}
                 {%if ((isPending and task.status == 'pending') or (not isPending and task.status != 'pending'))%}
-                    {% set task=task %}
+                    {% set task=task%}
+                    
                     {% include "task.html" %}
                 {%endif%}
             {%endfor%}

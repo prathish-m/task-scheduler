@@ -42,7 +42,7 @@ def hadPending(tasks):
     for task in tasks:
         if(task['status']=='pending'):
             return True
-        return False
+    return False
 
 #completed
 @app.template_filter("convert_to_12_format")
@@ -60,12 +60,12 @@ def convertTo12Format(time):
         ans=str(hr-12)+":"+time_arr[1]+" PM"
     return ans
 
-
 #ROUTES
 #completed
 @app.route("/")
 def home():
     data=getScheduledTasks()
+    # print("data: ",data)
     return render_template("index.html",data=data)
 
 
@@ -268,7 +268,7 @@ def _setDue(datas):
         else:
             duration_min=data['duration']
         current_time=datetime.now().replace(second=0,microsecond=0)
-        start_datetime = datetime.strptime(data['starting_date']+" "+data['starting_time'],"%Y-%m-%d %H:%M")
+        start_datetime = datetime.strptime(data['actual_starting_date']+" "+data['actual_starting_time'],"%Y-%m-%d %H:%M")
         completion_datetime=start_datetime+timedelta(minutes=duration_min)
         time_difference_sec = (completion_datetime - current_time).total_seconds()
         data['isDue']=(time_difference_sec<=0)
@@ -321,7 +321,7 @@ def getScheduledTasks():
 
     db_data=get_db().cursor().execute("SELECT * FROM TASKS").fetchall()
     packed_data = _packObjects(db_data)
-    packed_data=_setStatus(_setDue(packed_data)) ##set due and status
+    packed_data=_setStatus(packed_data) ##set and status
     pending_data,not_pending_data = _classifyPendingAndNotPendingData(packed_data)
     date_epochs=[]
     heap = [(-task["priority"],-task["id"], task) for task in pending_data]
@@ -406,13 +406,14 @@ def getScheduledTasks():
                 date_epochs.insert(least_to_left,[actual_starting_time,actual_ending_time])
         scheduled_pending_dates.append(ob)  
         print()
+    scheduled_pending_dates=_setDue(scheduled_pending_dates)
     scheduled_pending_dates.extend(not_pending_data)
     _setSchedules(scheduled_pending_dates)
     date_groups = _toArrayDateGroups(_getDateGroups(scheduled_pending_dates))
     sorted_date_groups = sorted(date_groups,key=__dateComparator)
     for dg in sorted_date_groups:
         dg['tasks']=sorted(dg['tasks'],key=__timeComparator)
-    print(sorted_date_groups)
+    # print(sorted_date_groups)
     return sorted_date_groups
 
 
