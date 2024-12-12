@@ -366,16 +366,17 @@ def getScheduledTasks():
             print(f"Collision in Starting datetime: {datetime.fromtimestamp(date_epochs[cp][0]).strftime("%Y-%m-%d %H:%M")} and Ending datetime: {datetime.fromtimestamp(date_epochs[cp][1]).strftime("%Y-%m-%d %H:%M")} at index {cp}")
             least_to_right = -1
             least_to_left = -1
+            duration_secs = duration_mins*60
             for i in range(cp,len(date_epochs)-1):
                 time_diff = date_epochs[i+1][0]-date_epochs[i][1]
-                if(time_diff >=  duration_mins):
+                if(time_diff >=  duration_secs):
                     least_to_right=i+1
                     break
             if(least_to_right == -1):
                 least_to_right=len(date_epochs)
             for i in reversed(range(1,cp+1)):
                 time_diff=date_epochs[i][0] - date_epochs[i-1][1]
-                if(time_diff >= duration_mins):
+                if(time_diff >= duration_secs*60):
                     least_to_left=i
                     break
             if(least_to_left == -1):
