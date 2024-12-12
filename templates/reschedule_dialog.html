@@ -1,0 +1,56 @@
+<dialog id="reschedule-task-dlg">
+    <div class="dlg-head">
+          <svg id="close-reschedule-form-btn" class="icon close-btn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg> <h3>RESCHEDULE TASK</h3>
+    </div>
+    <form id="reschedule-task" class="dlg-body" method="post">
+        <div class="form-item">
+            <label class="bottom-margin" for="id" >Id</label> 
+            <input class="input" type="text" name="id" id="reschedule-id" readonly>    
+        </div>
+        <div class="form-item">
+            <label class="bottom-margin" for="name">Name</label> 
+            <input class="input" type="text" name="name" id="reschedule-name" readonly>    
+        </div>
+
+        <div class="form-item">
+            <label for="description" class="bottom-margin" >Description</label>
+            <textarea class="input" name="description" rows="7" maxlength="250" id="reschedule-description" readonly></textarea>
+        </div >
+        <div class="form-item">
+            <label for="date" class="bottom-margin" >Date</label>
+            <input type="date" class="date-input" name="date" id="reschedule-date">
+        </div>
+        <div class="form-item">
+            <label for="time">Time</label>
+            <div class="time">
+                <input type="text" name="hour" maxlength="2" id="reschedule-hour">:<input type="text" name="min" maxlength="2" id="reschedule-min">
+                <select name="time-period" id="reschedule-time-period">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="form-item">
+            <label for="duration">Duration</label>
+            <div class="dur">
+                <input name="duration" type="text" maxlength="10" id="reschedule-duration">
+                <select name="duration-unit" id="reschedule-duration-unit">
+                    <option value="mins">Minutes</option>
+                    <option value="hrs">Hours</option>
+                  </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="priority">Priority</label>
+            <div class="pri">
+                <input id="reschedule-priority" name="priority" type="range" value="1" min="1" max="5" id="reschedule-priority">
+                <input type="text" style="border: none;" readonly id="priority-val">
+            </div>
+        </div>
+        
+        <button type="submit">Reschedule</button>
+    </form>
+</dialog>

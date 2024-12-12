@@ -1,0 +1,115 @@
+Requirement gathering:
+    Version 1: 
+        1)This is a single user application (done)
+        2)User must be able to add a task 
+        3)Each task should have the following information (done)
+            i)Task Id(Auto increment)(Not Displayed)
+            ii)Task name
+            iii)Description (optional)
+            iv)Starting Date
+            v)Starting Time
+            vi)Expected time to complete the task
+            vii)Priority Number (optional)
+        4)Priority number when not marked is set to 1 which is lowest
+        5)Priority number 5 is considered as highest and 1 is considered as lowest
+        6)If a task is collided with other task with higher priority, higher priority task succeeds and lower priority tasks are scheduled automatically after high priority
+        7)If a task is collided with same priority task then the task which is added latest time succeeds, the previous tasks are scheduled automatically after the latest task
+        8)The user must be able to know easily whether a task is scheduled automatically during collision (done)
+        9)User can mark a task as completed before even the deadline has completed
+        10)Once deadline is completed for each task, it should be highlighted as a different color that the task is due (done)
+        11)A task which is due can be marked as completed/reschedule/cancel (done)
+        12)There must be two conatiners for the user pending tasks and the Completed/Cancelled tasks
+        13)If user clicks on the Completed task the following information must be visible
+            i)Task Id
+            ii)Task name
+            iii)Description
+            iv)Starting Date(User scheduled date) + Starting Time(User scheduled time)
+            v)Actual Starting Date(Computer scheduled date) + Actual starting time(Computer scheduled time)
+            vi)Expected Time
+            vii)Priority Number
+            viii)Completed on(Date and time when the user clicked on completed)
+        14)If user clicks on the Cancelled task the following information must be visible
+            i)Task Id
+            ii)Task name
+            iii)Description
+            iv)Starting Date(User scheduled date) + Starting Time(User scheduled time)
+            v)Actual Starting Date(Computer scheduled date) + Actual starting time(Computer scheduled time)
+            vi)Expected Time
+            vii)Priority Number
+            viii)Cancelled on(Date and time when the user clicked on Cancelled)
+        15)The Cancelled task should have the option to reschedule the task where on rescheduled, the task should be removed from the cancel tabs and moved to pending task
+        16)Tasks can be either in 3 forms
+            i)Pending
+            ii)Completed
+            iii)Cancelled
+        17)If the user clicks on any pending task the following information must be visible
+            i)Task Id
+            ii)Task name
+            iii)Description
+            iv)Starting Date(User scheduled date) + Starting Time(User scheduled time)
+            v)Actual Starting Date(Computer scheduled date) + Actual starting time(Computer scheduled time)
+            vi)Expected Time
+            vii)Priority Number
+            viii)Due(Yes/No)
+        18)Any pending task can be rescheduled
+        19)All pending task should have a option "start now" on which the task is appended to current time with 1 priority and the others are rescheduled if any collision is There
+        20)When a pending task with due "no" is marked as completed/cancelled then the scheduler algo. should be run again
+        21)Completed tasks are displayed separately and tasks which is completed first displayed first 
+        22)The closest pending task must be displayed first
+        23)While rescheduling the following details are displayed with some in read only more and some in edit mode as follows
+            i)Task Id (Read only)
+            ii)Task name (Read only)
+            iii)Description (Read only)
+            iv)Starting Date(User scheduled date) + Starting Time(User scheduled time) (Read/Write)
+            vi)Expected Time duration (Read/Write)
+            vii)Priority Number (Read/Write)
+        24)After every rescheduling the scheduler algo. is run
+        25)Expected time duration can be in minutes or hours with only natural numbers allowed
+        26)After adding new task the scheduler algo. is run
+
+
+
+
+v1 Features
+1)Task scheduling based on priority
+2)Auto reschedule algorithm during collision of times
+3)Task can be rescheduled
+4)Task can be cancelled/completed
+
+Challenges:
+1)Pushing some near tasks to far during collision
+2)Rescheduling algorithm during collision can have neagtive side effects
+ 
+
+v2 Requirement
+1)Splitting single bigger tasks to multiple bigger tasks during collision -> option to user can be splittable or not splittable default option is splittable
+2)Periodic tasks with option that task can be repeated different hours,days,weeks,months and schedule upto max of 5 years
+3)Ability to freeze auto rescheduled tasks
+4)Create new copy of pending/completed/cancelled tasks
+5)Every task can have one or more children tasks where all the children tasks should have overlapping time
+6)Auto Emailling feature when task is started and when task is due
+7)Mobile Responsive
+8)Accessibility features improvement
+    i)When adding new task todays date is set by default
+    ii)On entering starting time if size of input reaches 2 in hour place it must be 
+    iii)Description should display maximum number of characters allowed and number of characters entered
+    iv)UI improvement in input fields
+    v)Transitions when a task is cliked for expanding
+    vi)No reload of pages during any operations
+    vii)Invalid input should be displayed using nice UI which is currently displayed using alert
+    viii)Optimization of algorithms both in frontend and backend
+    ix)UI improvement for entire page
+
+9)Multiuser single server task feature
+10)Login and logout page for each user
+11)Encryption and decreption of passwords
+12)Session of 24 hrs for each user after login
+13)CSRF-Protection 
+14)No-Sheduling time and it can be Periodic or non periodic
+15)No task can be schedulled in no-scheduling time
+16)Each periodic task or No Task can be cancelled
+17)Reseolve Bugs in V1
+ i)"No data display" bug to be resolved
+18)Search functionality
+19)Tasks with prerequisite task (One task can be moved to completed or cancelled state only when its prerequisite is completed or cancelled)
+

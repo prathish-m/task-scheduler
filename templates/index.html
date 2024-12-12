@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler</title>
+</head>
+<link rel="stylesheet" href="/styles/index.css">
+<script src="/scripts/index.js" defer></script>
+<body>
+    {% include "new_task_dialog.html" %}
+    {% include "reschedule_dialog.html" %}
+    <section class="component-wrapper" id="tasks-container-wrapper">
+
+        {%set isPending = True%}
+        {% include "task_container.html"%}
+
+        {%set isPending = False%}
+        {% include "task_container.html"%}
+        
+        {% include "color_indicator.html"%}
+        
+</body>
+</html>

@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&family=Bitter:ital,wght@0,100..900;1,100..900&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: "Inter";
+    background-color: black;
+    color: white;
+    font-size: small;
+}
+
+h2{
+    font-size: medium;
+}
+
+select:focus{
+    outline: none;
+}
+
+.component-wrapper{
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+    align-items: end;
+}
+.task-container{
+    height: 550px;
+    width: 400px;
+}
+.header{
+    height: 50px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header h2,#add-task{
+    margin: 0 1rem;
+}
+#add-task{
+    display: flex;
+    align-items: center;
+    background-color: #61c002;
+    color: black;
+    padding: 0.25rem 1rem;
+    gap: 0.5rem;
+    border-radius: 1rem;
+}
+#add-task:hover{
+    cursor: pointer;
+    background-color: #52a500;
+}
+.icon{
+    height: 24px;
+    width: 24px;
+}
+.main{
+    height:500px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: grey rgb(194, 194, 194);
+}
+.date-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.5rem;
+}
+.date{
+    color: rgb(208, 208, 208);
+    align-self: stretch;
+    text-align: center;
+}
+.task{
+    background-color: white;
+    color: black;
+    align-self: stretch;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    border-radius: 1rem;
+}
+.task:hover{
+    cursor: pointer;
+    background-color: rgb(175, 175, 175);
+}
+.ex-task{
+    font-size: x-small;
+    color: rgb(112, 111, 111);
+    margin: 0 0.25rem;
+}
+.ex-task-2{
+    font-size: x-small;
+    color: rgb(225, 223, 223);
+    margin: 0 0.25rem;
+}
+
+
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0 0 1rem;
+    gap: 0.5rem;
+}
+
+.items-child{
+    display: flex;
+    gap: 0.25rem;
+}
+
+.items-child em{
+    font-weight: bold;
+}
+
+.items-child span{
+    text-align: left;
+}
+
+.color-indicator{
+    margin: 2rem 0;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    top: 50%;        /* Vertically centered */
+    left: 50%;       /* Horizontally centered */
+    transform: translate(-50%, -50%); /* Shift to exact center */
+    
+}
+
+dialog:focus{
+    outline: none;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+.close-btn:hover{
+    cursor: pointer;
+    color: grey;
+}
+  
+.dlg-head h3{
+    width: 100%;
+    text-align: center;
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+}
+
+.dlg-body{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+}
+
+input:focus{
+    outline: none;
+}
+textarea{
+    border: 1px solid #6EC207;
+    resize: none; /*     Allow resizing only vertically */
+}
+textarea:focus{
+    outline: none;
+}
+
+.dlg-body input{
+    border: 1px solid #6EC207;
+}
+.input{
+    width: 100%;
+    line-height: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: x-small;
+}
+
+.input:focus{
+    box-shadow: 1px 1px 10px 1px #6EC207;
+}
+
+.date-input{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.form-item .time{
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.form-item .time input{
+    width: 2ch;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.form-item .time select{
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.form-item .dur input{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 10ch;
+}
+
+.form-item .dur select{
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.form-item .pri{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+.cancel-btn{
+    background-color: #e11d48;
+}
+.cancel-btn:hover{
+    box-shadow: 1px 1px 10px 1px #e11d48;
+}
+
+.reschedule-btn{
+    background-color: #fde047;
+}
+
+.reschedule-btn:hover{
+    box-shadow: 1px 1px 10px 1px #fde047;
+}
+
+.completed-btn{
+    background-color: #84cc16;
+}
+
+
+.completed-btn:hover{
+    box-shadow: 1px 1px 10px 1px #84cc16; 
+}
+
+
+#priority-val{
+    width: 1ch;
+    padding: 0.5rem;
+}
+
+.dlg-body button{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: greenyellow;
+}
+
+.dlg-body button:hover{
+    box-shadow: 1px 1px 10px 2px rgb(133, 198, 35);
+    background-color: rgb(162, 242, 42);
+    cursor: pointer;
+}
+
+.color{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.white-text{
+    color: white;
+}
+.bottom-margin{
+    margin-bottom: 0.35rem;
+}
+.cancelled{
+    background-color: #FF4545;
+
+}
+.cancelled:hover{
+    background-color: #f43535;
+}
+.completed{
+    background-color: #6EC207;
+}
+.completed:hover{
+    background-color: #589e03;
+}
+.auto-reschedule{
+    background-color: yellow;
+}
+.auto-reschedule:hover{
+    background-color: rgb(222, 222, 0);
+}
+
+
+.expanded{
+    padding: 1rem;
+    display: flex;
+    color: black;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.expanded:hover{
+    cursor: default;
+    background-color: white;
+}

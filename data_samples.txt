@@ -1,0 +1,155 @@
+# data={}
+    # data['dates']=[
+    #     {
+    #         'date': "12-12-1980",
+    #         'tasks': [
+    #             {
+    #                 'id': 1,
+    #                 'isDue': True,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 2,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': True
+    #             },
+    #             {
+    #                 'id': 3,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             }
+    #             ]
+    #     },
+    #     {
+    #         'date': "12-12-1981",
+    #         'tasks': [{
+    #                 'id': 4,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 5,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 6,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             }
+    #             ]
+    #     },
+    #     {
+    #         'date': "12-12-1982",
+    #         'tasks': [{
+    #                 'id': 7,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 8,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 9,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'pending',
+    #                 'isRescheduled': False
+    #             }
+    #             ]
+    #     },
+    #     {
+    #         'date': "12-12-1983",
+    #         'tasks': [
+    #             {
+    #                 'id': 10,
+    #                 'isDue': True,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'cancelled',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 11,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': True
+    #             },
+    #             {
+    #                 'id': 12,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': False
+    #             }
+    #             ]
+    #     },
+    #     {
+    #         'date': "12-12-1984",
+    #         'tasks': [{
+    #                 'id': 13,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 14,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'cancelled',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 15,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': False
+    #             }
+    #             ]
+    #     },
+    #     {
+    #         'date': "12-12-1985",
+    #         'tasks': [{
+    #                 'id': 16,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 17,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': False
+    #             },
+    #             {
+    #                 'id': 18,
+    #                 'isDue': False,
+    #                 'name': 'Lorem Ipsum',
+    #                 'status': 'completed',
+    #                 'isRescheduled': False
+    #             }
+    #         ]
+    #     }
+    # ]

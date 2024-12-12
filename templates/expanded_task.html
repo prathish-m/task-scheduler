@@ -1,0 +1,22 @@
+    <svg class="icon close-btn" data-id="1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+    <div class="items">
+        <div class="items-child"><em>Id: </em><span>{{task.id}}</span></div>
+        <div class="items-child"><em>Name: </em><span>{{task.name}}</span></div>
+        <div class="items-child"><em>Description: </em><span>{{task.description}}</span></div>
+        {%if task.status == 'pending'%}
+        <div class="items-child"><em>Starting Datetime: </em><span>{{task.starting_date}} {{task.starting_time | convert_to_12_format}}</span></div>
+        <div class="items-child"><em>Act. Starting Datetime: </em><span>{{task.actual_starting_date}} {{task.actual_starting_time | convert_to_12_format}}</span></div>
+        {%else%}
+        <div class="items-child"><em>{{task.status | capitalize}} Datetime: </em><span>{{task.completed_date}} {{task.completed_time | convert_to_12_format}}</span></div>
+        {%endif%}
+        <div class="items-child"><em>Duration: </em><span>{{task.duration}} {{task.duration_unit}}</span></div>
+        <div class="items-child"><em>Priority Number: </em><span>{{task.priority}}</span></div>
+        <div class="items-child"><em>Due: </em><span></span>{%if task.isDue%}YES{%else%}NO{%endif%}</div>
+        {%if task.status == 'pending'%}
+        <div class="items-child"><button class="btn completed-btn">Completed</button><button class="btn reschedule-btn">Reschedule</button><button class="btn cancel-btn">Cancel</button></div>
+        {%endif%}
+    </div>
+
+

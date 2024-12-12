@@ -1,0 +1,12 @@
+task:
+    status: completed/pending/cancelled
+    isRescheduled: Boolean
+    name: String
+    isDue: Boolean
+    actual_starting_time: String of format ('HH:MM') 24 hrs format
+    duration: Integer
+    duration_unit: 'mins'/ 'hrs'
+    priority: Integer Range(1-5)
+    completed_time: String of format  ('HH:MM') 24 hrs format or none 
+
+

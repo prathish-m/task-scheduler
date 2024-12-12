@@ -1,0 +1,13 @@
+task
+    id: Integer
+    status: 'pending'/'completed'/'cancelled'
+    name: String
+    description: String
+    starting_date: String 
+    starting_time: String in format (HH:MM) 24 hrs format
+    actual_starting_date: String
+    actual_starting_time: String in format (HH:MM) 24 hrs format
+    duration: Integer
+    duration_unit: 'hrs'/'mins'
+    priority: Integer Range(1-5)
+    isDue: Boolean

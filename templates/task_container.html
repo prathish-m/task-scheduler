@@ -1,0 +1,35 @@
+
+<div class="task-container" id="{%if isPending%}pending-tasks-container{%else%}not-pending-task-container{%endif%}">
+    <div class="header">
+        <h2>{%if isPending%}Pending{%else%}Completed/Cancelled{%endif%} Tasks</h2>
+        {%if isPending%}
+        <div id="add-task">
+            <p>Add Task</p><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </div>
+        {%endif%}
+    </div>
+    <div class="main">
+        {%if data | length == 0%} <p style="font-weight: bold; color: red; text-align: center;">No data to display</p>{%endif%}
+        {%if not isPending%}
+            {%set data = data | reverse%}
+        {%endif%}
+        {%for obj in data%}
+        {%set hasPending = obj.tasks | has_pending%}
+        {%if (isPending and hasPending) or (not isPending and not hasPending) %}
+        <div class="date-group">
+        <p class="date">{{obj.date}}</p>
+            {%for task in obj.tasks%}
+                {%if ((isPending and task.status == 'pending') or (not isPending and task.status != 'pending'))%}
+                    {% set task=task %}
+                    {% include "task.html" %}
+                {%endif%}
+            {%endfor%}
+        </div>
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
