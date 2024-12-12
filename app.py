@@ -37,10 +37,10 @@ def close_connection(exception):
 #TEMPLATE FILTERS
 
 #completed
-@app.template_filter("has_pending")
-def hadPending(tasks):
+@app.template_filter("check_status")
+def checkStatus(tasks,status):
     for task in tasks:
-        if(task['status']=='pending'):
+        if(task['status']==status):
             return True
     return False
 
@@ -65,7 +65,7 @@ def convertTo12Format(time):
 @app.route("/")
 def home():
     data=getScheduledTasks()
-    # print("data: ",data)
+    print("data: ",data)
     return render_template("index.html",data=data)
 
 

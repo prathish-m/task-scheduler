@@ -14,12 +14,8 @@
     </div>
     <div class="main">
         {%if data | length == 0%} <p style="font-weight: bold; color: red; text-align: center;">No data to display</p>{%endif%}
-        {%if not isPending%}
-            {%set data = data | reverse%}
-        {%endif%}
         {%for obj in data%}
-        {%set hasPending = obj.tasks | has_pending%}
-        {%if (isPending and hasPending) or not (isPending or hasPending) %}
+        {%if (isPending and (obj.tasks | check_status('pending'))) or  (not isPending and (obj.tasks | check_status('cancelled')) or (obj.tasks | check_status('completed')))  %}
 
         <div class="date-group">
         <p class="date">{{obj.date}}</p>

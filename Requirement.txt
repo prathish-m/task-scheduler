@@ -80,8 +80,9 @@ v1-beta Bugs:
 1)Wrong calculation in reschduling algo. (resolved)
 2)Auto reschduling algo time metrics must be updated(resolved)
 3)Task are rescheduled when completed
-4)Due is calculated before auto reschedule algo. 
- 
+4)Due is calculated before auto reschedule algo. (resolved)
+5)"No data display" bug to be resolved
+
 
 v2 Requirement
 1)Splitting single bigger tasks to multiple bigger tasks during collision -> option to user can be splittable or not splittable default option is splittable
@@ -110,8 +111,6 @@ v2 Requirement
 14)No-Sheduling time and it can be Periodic or non periodic
 15)No task can be schedulled in no-scheduling time
 16)Each periodic task or No Task can be cancelled
-17)Reseolve Bugs in V1
- i)"No data display" bug to be resolved
 18)Search functionality
 19)Tasks with prerequisite task (One task can be moved to completed or cancelled state only when its prerequisite is completed or cancelled)
 
