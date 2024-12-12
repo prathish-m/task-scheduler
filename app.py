@@ -382,8 +382,9 @@ def getScheduledTasks():
             if(least_to_left == -1):
                 least_to_left=0
             print(f"least to left: {least_to_left}, least to right: {least_to_right}")
-            isValidLeft = ((date_epochs[least_to_left][0]-duration_mins*60 - int(datetime.now().timestamp())) > 60)
-            if(not isValidLeft or least_to_right - cp <= cp - least_to_left+1):
+            isValidLeft = ((date_epochs[least_to_left][0]-duration_secs - int(datetime.now().timestamp())) > 60)
+
+            if(not isValidLeft or date_epochs[least_to_right-1][1] - starting_epoch <= starting_epoch - date_epochs[least_to_left][0]+ duration_secs ):
                 print(f"inserting at {least_to_right}")
                 actual_starting_time = date_epochs[least_to_right-1][1]
                 actual_ending_time = date_epochs[least_to_right-1][1]+duration_secs
@@ -395,6 +396,7 @@ def getScheduledTasks():
                 date_epochs.insert(least_to_right,[actual_starting_time,actual_ending_time])
             else:
                 print(f"inserting before {least_to_left}")
+                actual_ending_time = date_epochs[least_to_left][0]
                 actual_starting_time = date_epochs[least_to_left][0]-duration_secs
                 actual_starting_datetime = datetime.fromtimestamp(actual_starting_time).strftime('%Y-%m-%d %H:%M').split(' ')
                 actual_ending_datetime = datetime.fromtimestamp(actual_ending_time).strftime('%Y-%m-%d %H:%M').split(' ')
@@ -410,6 +412,7 @@ def getScheduledTasks():
     sorted_date_groups = sorted(date_groups,key=__dateComparator)
     for dg in sorted_date_groups:
         dg['tasks']=sorted(dg['tasks'],key=__timeComparator)
+    print(sorted_date_groups)
     return sorted_date_groups
 
 

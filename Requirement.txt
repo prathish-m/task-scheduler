@@ -76,9 +76,11 @@ v1 Features
 3)Task can be rescheduled
 4)Task can be cancelled/completed
 
-Challenges:
-1)Pushing some near tasks to far during collision
-2)Rescheduling algorithm during collision can have neagtive side effects
+v1-beta Bugs:
+1)Wrong calculation in reschduling algo. (resolved)
+2)Auto reschduling algo time metrics must be updated
+3)Task are rescheduled when completed
+
  
 
 v2 Requirement
