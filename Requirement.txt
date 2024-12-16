@@ -75,6 +75,7 @@ v1 Features
 2)Auto reschedule algorithm during collision of times
 3)Task can be rescheduled
 4)Task can be cancelled/completed
+5)Single local server and single user 
 
 v1-beta Bugs:
 1)Wrong calculation in reschduling algo. (resolved)
