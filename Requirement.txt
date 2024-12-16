@@ -81,8 +81,10 @@ v1-beta Bugs:
 2)Auto reschduling algo time metrics must be updated(resolved)
 3)Task are rescheduled when completed
 4)Due is calculated before auto reschedule algo. (resolved)
-5)"No data display" bug to be resolved
-
+5)"No data display" bug to be resolved (resolved)
+6)Date is displayed in "Pending tasks" container even if it has no data in it
+Other Add-ons:
+    i)Ongoing tasks are to be notified to user (resolved)
 
 v2 Requirement
 1)Splitting single bigger tasks to multiple bigger tasks during collision -> option to user can be splittable or not splittable default option is splittable
@@ -94,7 +96,7 @@ v2 Requirement
 7)Mobile Responsive
 8)Accessibility features improvement
     i)When adding new task todays date is set by default
-    ii)On entering starting time if size of input reaches 2 in hour place it must be 
+    ii)On entering starting time if size of input reaches 2 in hour place it must be autofocused on next part
     iii)Description should display maximum number of characters allowed and number of characters entered
     iv)UI improvement in input fields
     v)Transitions when a task is cliked for expanding
@@ -102,7 +104,6 @@ v2 Requirement
     vii)Invalid input should be displayed using nice UI which is currently displayed using alert
     viii)Optimization of algorithms both in frontend and backend
     ix)UI improvement for entire page
-
 9)Multiuser single server task feature
 10)Login and logout page for each user
 11)Encryption and decreption of passwords
@@ -113,4 +114,7 @@ v2 Requirement
 16)Each periodic task or No Task can be cancelled
 18)Search functionality
 19)Tasks with prerequisite task (One task can be moved to completed or cancelled state only when its prerequisite is completed or cancelled)
-
+20)Extending of tasks time made simpler
+21)Region support for date time
+22)Add audit log table for monitoring
+23)Streak on continuous completion

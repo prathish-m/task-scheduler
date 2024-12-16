@@ -13,7 +13,7 @@
         {%endif%}
     </div>
     <div class="main">
-        {%if data | length == 0%} <p style="font-weight: bold; color: red; text-align: center;">No data to display</p>{%endif%}
+        {%if (isPending and not (data | has_status('pending'))) or (not isPending and not ((data | has_status('completed')) or (data | has_status('cancelled'))))%} <p style="font-weight: bold; color: red; text-align: center;">No data to display</p>{%endif%}
         {%for obj in data%}
         {%if (isPending and (obj.tasks | check_status('pending'))) or  (not isPending and (obj.tasks | check_status('cancelled')) or (obj.tasks | check_status('completed')))  %}
 

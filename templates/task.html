@@ -1,11 +1,13 @@
 <div class="task {%if task.status == 'completed'%}completed white-text {%elif task.status == 'cancelled'%}cancelled white-text{%elif task.status == 'pending' and task.isRescheduled %}auto-reschedule{%endif%}" data-task-id="{{task.id}}">
     <p>{{task.name}}
     {% if task.isDue and task.status == 'pending' %}
-    <span style="color:red; margin-left: 0.25rem;">DUE</span> 
+    <span style="color:red; margin-left: 0.25rem;">DUE</span>
+    {%elif (task.status == 'pending' and task | is_ongoing)%}
+    <span style="color:green; margin-left: 0.25rem;">Ongoing</span>
     {%endif%}
     </p>
     {%if task.status == "pending"%}
-        <span class="ex-task">Start: {{task.actual_starting_time|convert_to_12_format}}</span>
+        <span class="ex-task">Start: {{task.actual_starting_time | convert_to_12_format}}</span>
         <span class="ex-task">Duration: {{task.duration}}{%if task.duration_unit == 'mins'%}m{%else%}h{%endif%}</span>
         <span class="ex-task">Priority: {{task.priority}}</span>
     {%else%}

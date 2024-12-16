@@ -45,6 +45,32 @@ def checkStatus(tasks,status):
     return False
 
 #completed
+@app.template_filter("is_ongoing")
+def isOngoing(task):
+    date=task['actual_starting_date']
+    time=task['actual_starting_time']
+    duration=task['duration']
+    duration_unit=task['duration_unit']
+    duration_mins=int(duration)
+    if(duration_unit == 'hrs'):
+        duration_mins = duration*60 
+    start_time = datetime.strptime(date+" "+time,"%Y-%m-%d %H:%M").timestamp()
+    curr_time = datetime.now().timestamp()
+    return (curr_time >= start_time) and (curr_time < start_time+(duration_mins*60)) 
+
+#completed
+@app.template_filter('has_status')
+def hasPendingTasks(datas,status):
+    print("Checking for status:",status)
+    for data in datas:
+        for d in data['tasks']:
+            if(d['status'] == status):
+                print("Status found")
+                return True
+    print('Status not found')
+    return False
+
+#completed
 @app.template_filter("convert_to_12_format")
 def convertTo12Format(time):
     time_arr=time.split(":")
@@ -425,4 +451,4 @@ if __name__ == "__main__":
         init_schema()
         getScheduledTasks()
         print(Style.RESET_ALL)
-    app.run(host='0.0.0.0',port=8000,debug=True)
+    app.run(host='0.0.0.0',port=9000,debug=True)
