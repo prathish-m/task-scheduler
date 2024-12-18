@@ -15,7 +15,7 @@
     <div class="main">
         {%if (isPending and not (data | has_status('pending'))) or (not isPending and not ((data | has_status('completed')) or (data | has_status('cancelled'))))%} <p style="font-weight: bold; color: red; text-align: center;">No data to display</p>{%endif%}
         {%for obj in data%}
-        {%if (isPending and (obj.tasks | check_status('pending'))) or  (not isPending and (obj.tasks | check_status('cancelled')) or (obj.tasks | check_status('completed')))  %}
+        {%if (isPending and (obj.tasks | check_status('pending'))) or  (not isPending and ((obj.tasks | check_status('cancelled')) or (obj.tasks | check_status('completed'))))  %}
 
         <div class="date-group">
         <p class="date">{{obj.date}}</p>
