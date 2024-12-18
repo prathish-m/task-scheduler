@@ -119,3 +119,6 @@ v2 Requirement
 21)Region support for date time
 22)Add audit log table for monitoring
 23)Streak on continuous completion
+24)Lazy loading when there is a lot of tasks in either pending or completed state
+25)Add comments after completion
+
