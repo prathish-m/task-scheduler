@@ -1,4 +1,0 @@
-1)Changes to be made before releasing any new Version
-    a)Change the port to 8000, and remove the debug = true option
-    b)Remove all the print the statements
-    c)Do not track the database/sqlite.db file in git
